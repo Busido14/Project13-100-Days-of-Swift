@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="ik4-uQ-lcU">
             <objects>
-                <viewController id="yE4-au-h7V" sceneMemberID="viewController">
+                <viewController id="yE4-au-h7V" customClass="ViewController" customModule="Project13" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XVm-Pm-noy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,16 +39,25 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="br7-t2-J3m">
                                 <rect key="frame" x="92" y="725.66666666666663" width="287" height="31"/>
+                                <connections>
+                                    <action selector="intensityChange:" destination="yE4-au-h7V" eventType="valueChanged" id="qLs-1u-hvU"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3c-Fm-T3U">
                                 <rect key="frame" x="15.999999999999993" y="763.66666666666663" width="125.33333333333331" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Change Filter"/>
+                                <connections>
+                                    <action selector="changeFilter:" destination="yE4-au-h7V" eventType="touchUpInside" id="eZJ-xk-4LW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cY4-kc-gIh">
                                 <rect key="frame" x="316" y="763.66666666666663" width="61" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="yE4-au-h7V" eventType="touchUpInside" id="sc0-Zp-k3g"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6O1-on-lNg"/>
@@ -72,6 +81,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zpd-SG-3av"/>
+                    <connections>
+                        <outlet property="imageView" destination="5r4-5t-cpm" id="A43-ry-UPC"/>
+                        <outlet property="intensity" destination="br7-t2-J3m" id="bsT-Is-Q2j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tOJ-fu-Dfh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
